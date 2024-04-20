@@ -16,9 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     // Do any additional setup after loading the view.
     self.mapView.rotateEnabled = NO;
-    self.mapView.zoomEnabled = NO ;
+    self.mapView.zoomEnabled = YES ;
     self.mapView.delegate = self;
     
     //Location manager
@@ -86,13 +88,30 @@
     
     printf("didUpdateHeading\n");
 }
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-    //allUpdates
-    printf("didUpdateLocations\n");
-}
+
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     //only new update
     printf("didUpdateUserLocation\n");
+}
+
+// Implement CLLocationManagerDelegate method to handle location updates
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *currentLocation = [locations lastObject];
+    
+    // Center the map at the user's current location
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 500, 500); // 500 meters around the user
+    [self.mapView setRegion:region animated:YES];
+    
+    // Stop updating location to save battery
+    [self.locationManager stopUpdatingLocation];
+}
+
+// Implement CLLocationManagerDelegate method to handle location authorization status changes
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        // Location authorization granted, start updating location
+        [self.locationManager startUpdatingLocation];
+    }
 }
 
 
