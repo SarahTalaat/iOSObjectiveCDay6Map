@@ -16,6 +16,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.mapView.rotateEnabled = NO;
+    self.mapView.zoomEnabled = NO ;
 }
 
 
