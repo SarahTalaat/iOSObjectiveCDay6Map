@@ -34,9 +34,11 @@
 
 - (IBAction)addAnnotation:(id)sender {
     
+    
+    [self.mapView removeAnnotation:_mapView.annotations];
     CGPoint touchPoint = [sender locationInView:self.mapView];
     CLLocationCoordinate2D touchLocation = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
-    CustomeAnnotation *annotation = [CustomeAnnotation new];
+    CustomAnnotation *annotation = [CustomAnnotation new];
     annotation.coordinate = touchLocation;
     annotation.title = @"MAD Alex";
     

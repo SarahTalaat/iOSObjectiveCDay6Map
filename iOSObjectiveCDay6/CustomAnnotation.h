@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CustomeAnnotation : NSObject <MKMapViewDelegate>
+@interface CustomAnnotation : NSObject <MKMapViewDelegate>
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 

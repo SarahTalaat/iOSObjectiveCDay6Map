@@ -7,6 +7,6 @@
 
 #import "CustomAnnotation.h"
 
-@implementation CustomAnnotation
+@implementation CustomAnnotation : NSObject
 
 @end
