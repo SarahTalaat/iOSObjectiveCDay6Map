@@ -30,6 +30,8 @@
     
     [_locationManager startUpdatingLocation];
     
+    self.mapView.showsUserLocation = YES;
+    
 }
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
