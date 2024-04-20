@@ -29,4 +29,9 @@
     printf("regionDidChangeAnimated\n");
 }
 
+- (IBAction)addAnnotation:(id)sender {
+    
+}
+
+
 @end

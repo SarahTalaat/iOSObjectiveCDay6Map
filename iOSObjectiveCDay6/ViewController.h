@@ -8,9 +8,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController <MKMapViewDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate,MKAnnotation>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic,copy) NSString *title;
+@property (nonatomic,copy) NSString* subtitle;
 
 @end
 
