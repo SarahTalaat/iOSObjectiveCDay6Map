@@ -20,6 +20,15 @@
     self.mapView.rotateEnabled = NO;
     self.mapView.zoomEnabled = NO ;
     self.mapView.delegate = self;
+    
+    //Location manager
+    
+    _locationManager = [CLLocationManager new];
+    [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    [_locationManager setDistanceFilter:kCLHeadingFilterNone];
+    
+    [_locationManager startUpdatingLocation];
+    
 }
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
