@@ -33,6 +33,12 @@
     self.mapView.showsUserLocation = YES;
     
 }
+//atomic:
+/*
+ Thread safe
+ one at a time
+ lama el thread t5ls sho8laha 7sm7 lthread ltanya t acces el property deh and so on
+ */
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
     printf("regionWillChangeAnimated\n");
@@ -59,7 +65,22 @@
     [self.mapView addAnnotation:annotation];
     
 }
+//what is retain cycle?
+//how to avoid or solve it?
+//example
 
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"userLocation"];
+        annotationView.image = [UIImage imageNamed:@"car_icon"];
+        annotationView.frame = CGRectMake(0, 0, 30, 30);
+        annotationView.canShowCallout = NO;
+        return annotationView;
+    }
+    
+    return nil; // Return nil for other annotations
+}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     
