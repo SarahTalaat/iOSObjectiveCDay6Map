@@ -17,6 +17,7 @@
 		B6D72D462BD3A3490014028D /* iOSObjectiveCDay6Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D72D452BD3A3490014028D /* iOSObjectiveCDay6Tests.m */; };
 		B6D72D502BD3A3490014028D /* iOSObjectiveCDay6UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D72D4F2BD3A3490014028D /* iOSObjectiveCDay6UITests.m */; };
 		B6D72D522BD3A3490014028D /* iOSObjectiveCDay6UITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D72D512BD3A3490014028D /* iOSObjectiveCDay6UITestsLaunchTests.m */; };
+		B6D72D622BD3B0C10014028D /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D72D612BD3B0C10014028D /* CustomAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		B6D72D4B2BD3A3490014028D /* iOSObjectiveCDay6UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSObjectiveCDay6UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D72D4F2BD3A3490014028D /* iOSObjectiveCDay6UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSObjectiveCDay6UITests.m; sourceTree = "<group>"; };
 		B6D72D512BD3A3490014028D /* iOSObjectiveCDay6UITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSObjectiveCDay6UITestsLaunchTests.m; sourceTree = "<group>"; };
+		B6D72D602BD3B0C10014028D /* CustomAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
+		B6D72D612BD3B0C10014028D /* CustomAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				B6D72D372BD3A3460014028D /* LaunchScreen.storyboard */,
 				B6D72D3A2BD3A3470014028D /* Info.plist */,
 				B6D72D3B2BD3A3470014028D /* main.m */,
+				B6D72D602BD3B0C10014028D /* CustomAnnotation.h */,
+				B6D72D612BD3B0C10014028D /* CustomAnnotation.m */,
 			);
 			path = iOSObjectiveCDay6;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D72D622BD3B0C10014028D /* CustomAnnotation.m in Sources */,
 				B6D72D312BD3A33D0014028D /* ViewController.m in Sources */,
 				B6D72D2B2BD3A33D0014028D /* AppDelegate.m in Sources */,
 				B6D72D3C2BD3A3470014028D /* main.m in Sources */,

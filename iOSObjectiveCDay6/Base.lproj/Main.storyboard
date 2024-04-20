@@ -35,7 +35,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="SFG-gT-LT5">
                     <connections>
-                        <action selector="addAnnotation:" destination="BYZ-38-t0r" id="si4-BM-gBk"/>
+                        <action selector="addAnnotation:" destination="BYZ-38-t0r" id="1vc-nz-ZIB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

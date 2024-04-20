@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController <MKMapViewDelegate,MKAnnotation>
 
+- (IBAction)addAnnotation:(id)sender;
+
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic,copy) NSString *title;

@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "CustomAnnotation.h"
 
 @interface ViewController ()
 
@@ -29,9 +30,17 @@
     printf("regionDidChangeAnimated\n");
 }
 
+
+
 - (IBAction)addAnnotation:(id)sender {
     
+    CGPoint touchPoint = [sender locationInView:self.mapView];
+    CLLocationCoordinate2D touchLocation = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    CustomeAnnotation *annotation = [CustomeAnnotation new];
+    annotation.coordinate = touchLocation;
+    annotation.title = @"MAD Alex";
+    
+    [self.mapView addAnnotation:annotation];
+    
 }
-
-
 @end
