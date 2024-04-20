@@ -26,6 +26,7 @@
     _locationManager = [CLLocationManager new];
     [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     [_locationManager setDistanceFilter:kCLHeadingFilterNone];
+    self.locationManager.delegate = self;
     
     [_locationManager startUpdatingLocation];
     
@@ -51,10 +52,26 @@
     CustomAnnotation *annotation = [CustomAnnotation new];
     annotation.coordinate = touchLocation;
     annotation.title = @"MAD Alex";
+    [_locationManager requestWhenInUseAuthorization];
     
     [self.mapView addAnnotation:annotation];
     
 }
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
+    
+    printf("didUpdateHeading\n");
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    //allUpdates
+    printf("didUpdateLocations\n");
+}
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    //only new update
+    printf("didUpdateUserLocation\n");
+}
+
 
 //
 @end
