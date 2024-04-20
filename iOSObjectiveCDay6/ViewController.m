@@ -61,7 +61,7 @@
     CLLocationCoordinate2D touchLocation = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
     CustomAnnotation *annotation = [CustomAnnotation new];
     annotation.coordinate = touchLocation;
-    annotation.title = @"MAD Alex";
+    annotation.title = @"Current Location";
     [_locationManager requestWhenInUseAuthorization];
     
     [self.mapView addAnnotation:annotation];
